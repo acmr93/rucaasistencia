@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use DB;
+use App\Empresa;
 
 use View;
 
@@ -27,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {   
         if (php_sapi_name() != 'cli') {
-            $empresa = DB::table('empresa')->where('id', 1)->first();
+            $empresa = Empresa::find(1);
             View::share('empresa', $empresa);
         }
     }

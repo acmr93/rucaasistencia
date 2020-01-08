@@ -47,8 +47,7 @@
 								<td>
 									@if ($servicio->texto != null)
 										@foreach ($servicio->texto as $key => $value)
-										<div class="col-auto">
-											<img id="imagen" src="{{asset('loaded/servicios/'.$value['img'])}}" class="control">
+										<div class="col-12">
 											{{$value['subservicio']}}
 										</div>
 										@endforeach										

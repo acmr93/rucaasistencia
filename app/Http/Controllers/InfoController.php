@@ -21,9 +21,6 @@ class InfoController extends Controller
     		case 'general':
     			$empresa = Empresa::find(1);
                 if ($empresa != null) {
-                    $empresa->domicilio = json_decode($empresa->domicilio, true);
-                    $empresa->telefonos = json_decode($empresa->telefonos, true);
-                    $empresa->emails = json_decode($empresa->emails, true);
                 }
                 $header = Multimedia::where('tipo', 'header')->first();
                 $footer = Multimedia::where('tipo', 'footer')->first();
@@ -44,7 +41,6 @@ class InfoController extends Controller
     		case 'redes':
     			$empresa = Empresa::find(1);
                 if ($empresa != null) {
-                    $empresa->redes_sociales = json_decode($empresa->redes_sociales, true);
                 }
                 return view('adm.info.redes')->with('empresa',$empresa);
 
@@ -85,7 +81,7 @@ class InfoController extends Controller
                             "detalles" => $request->detalles,
                         ];
 
-        $empresa->domicilio = json_encode($domicilio);
+        $empresa->domicilio = $domicilio;
 
         $empresa->save();
 
@@ -127,7 +123,7 @@ class InfoController extends Controller
                                     "clickeable" => $request->tel_clickeable[$tipo_telf],
                                 ];
             }
-            $empresa->telefonos = json_encode($telefonos);
+            $empresa->telefonos = $telefonos;
             $empresa->save();
         }
 
@@ -136,7 +132,7 @@ class InfoController extends Controller
             foreach ($request->email as $email) {
                 $emails[] = $email; 
             }
-            $empresa->emails = json_encode($emails);
+            $empresa->emails = $emails;
             $empresa->save();
         }
 
@@ -164,7 +160,7 @@ class InfoController extends Controller
                                     "enlace" =>     $request->enlace[$tipo]
                                 ];
             }
-            $empresa->redes_sociales = json_encode($redes_sociales);
+            $empresa->redes_sociales = $redes_sociales;
             $empresa->save();
         }
         $empresa->save();

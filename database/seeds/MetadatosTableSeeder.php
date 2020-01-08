@@ -21,27 +21,27 @@ class MetadatosTableSeeder extends Seeder
         ]);
 
         Metadato::create([
-            'seccion' => 'empresa',
-            'keywords' => "empresa",
-            'description' => "empresa",
+            'seccion' => 'quienes somos',
+            'keywords' => "quienes somos",
+            'description' => "quienes somos",
         ]);
 
         Metadato::create([
-            'seccion' => 'productos',
-            'keywords' => "productos",
-            'description' => "productos",
+            'seccion' => 'servicios',
+            'keywords' => "servicios",
+            'description' => "servicios",
         ]);
 
         Metadato::create([
-            'seccion' => 'noticias',
-            'keywords' => "noticias",
-            'description' => "noticias",
+            'seccion' => 'personal especializado',
+            'keywords' => "personal especializado",
+            'description' => "personal especializado",
         ]);
 
         Metadato::create([
-            'seccion' => 'cotizacion',
-            'keywords' => "cotizacion",
-            'description' => "cotizacion",
+            'seccion' => 'clientes',
+            'keywords' => "clientes",
+            'description' => "clientes",
         ]);
 
         Metadato::create([

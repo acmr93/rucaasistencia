@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Saira:300,400,500,600,700&display=swap');
+
+body {
+  font-family: 'Saira';
+}
+
+.regular{
+	font-weight: normal;
+}
+
+.medium{
+	font-weight: medium;
+}
+
+.min-height {
+  min-height: 300px;
+}
+
+.flotante {
+    font-size: 20px;
+    display:scroll;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 10px;
+}

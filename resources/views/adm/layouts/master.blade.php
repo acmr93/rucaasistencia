@@ -3,7 +3,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>@yield('title', 'ADMIN | Compet')</title>
+  <title>@yield('title', $empresa->nombre.'| ADMIN')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -89,11 +89,11 @@
                   <i class="fas fa-mail-bulk mr-2"></i> Emails de Formularios
                 </a>
               </li>
-              <li>
+{{--               <li>
                 <a href="{{route('info.empresa','redes')}}" class="dropdown-item">
                   <i class="fas fa-comments mr-2"></i> Redes Sociales
                 </a>
-              </li>
+              </li> --}}
               <li>
                 <a href="{{route('info.empresa','terminos')}}" class="dropdown-item">
                   <i class="fas fa-check-square mr-2"></i> Términos y condiciones
@@ -144,12 +144,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('home.banner')}}" class="nav-link {{ request()->is('adm/home/banner*') ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Banner</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{route('home.contenido')}}" class="nav-link {{ request()->is('adm/home/contenido*') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Contenido</p>
@@ -161,17 +155,11 @@
             <a href="#" class="nav-link {{ request()->is('adm/empresa*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-city"></i>
               <p>
-                Empresa
+                Quienes Somos
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('empresa.slider')}}" class="nav-link {{ request()->is('adm/empresa/slider*') ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Slider</p>
-                </a>
-              </li>
               <li class="nav-item">
                 <a href="{{route('empresa.banner')}}" class="nav-link {{ request()->is('adm/empresa/banner*') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
@@ -202,18 +190,20 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('servicios.banner')}}" class="nav-link {{ request()->is('adm/servicios/banner*') ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Banner</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{route('servicios.index')}}" class="nav-link {{ request()->is('adm/servicios/index*') || request()->is('adm/servicios/form*') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lista de Servicios</p>
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('extra.contenido')}}" class="nav-link {{ request()->is('adm/contenido_extra*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-people-carry"></i>
+              <p>
+                Personal Especializado
+              </p>
+            </a>
           </li>
           <li class="nav-item">
             <a href="{{route('clientes.index')}}" class="nav-link {{ request()->is('adm/clientes') ? 'active' : '' }}">
@@ -223,22 +213,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{route('galeria.slider')}}" class="nav-link {{ request()->is('adm/geleria*') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-images"></i>
-              <p>
-                Galeria
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('extra.contenido')}}" class="nav-link {{ request()->is('adm/contenido_extra*') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                Contenido Extra
-              </p>
-            </a>
-          </li>
+
           @if (auth()->user()->rol == 'admin')
             <li class="nav-header">Acceso Restringido</li>
             <li class="nav-item">

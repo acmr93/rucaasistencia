@@ -69,7 +69,13 @@
 								<img id="imagen" src="{{asset('loaded/contenido/'.$value['nombre'])}}" class="control">
 							@endforeach
 						@else
-							<img id="imagen" src="{{asset('images/thumbnails/1128x898.png')}}" class="control" alt="Responsive image">
+							@if ($seccion == 'home')
+								<img id="imagen" src="{{asset('images/thumbnails/730x485.png')}}" class="control" alt="Responsive image">
+							@elseif($seccion == 'empresa')
+								<img id="imagen" src="{{asset('images/thumbnails/700x555.png')}}" class="control" alt="Responsive image">
+							@else
+								<img id="imagen" src="{{asset('images/thumbnails/1365x518.png')}}" class="control" alt="Responsive image">
+							@endif
 						@endif
 		                		    		
 		    		</div>

@@ -62,7 +62,7 @@
 								<img id="images" src="{{asset('loaded/servicios/'.$value['nombre'])}}" class="control exampleInputFile">
 							@endforeach
 						@else
-							<img id="images" src="{{asset('images/thumbnails/1128x898.png')}}" class="control exampleInputFile">
+							<img id="images" src="{{asset('images/thumbnails/135x135.png')}}" class="control exampleInputFile">
 						@endif
 		                		    		
 		    		</div>
@@ -74,22 +74,13 @@
 						<table id="subservicios" class=" table table-borderless">
 							<tbody>
 								@if ( isset($servicio) && $servicio->texto != null)
-									@php $count = 0; @endphp
 									@foreach($servicio->texto as $subservicio => $value)
-										@php $count++; @endphp
 										<tr>
 											{!! Form::hidden('id_sub[]', $value['id']) !!}
-											<td  class="align-middle" width="50%">
+											<td  class="text-center" >
 				    				    		{!! Form::text('sub_servicio[]', $value['subservicio'] , ['id' => 'sub_servicio[]','class' => 'form-control', 'placeholder' => 'Subservicios:']) !!}
 											</td>
-											<td  class="align-middle">
-						    				    {!! Form::file('file_subservicio[]', ['id'=>'file_'.$count, 'class' => 'archivo-old']) !!}
-						    				    <strong id="error-file_{{$count}}" class="text-danger"></strong>
-											</td>
-											<td>
-												<img src="{{asset('loaded/servicios/'.$value['img'])}}" class="control file_{{$count}}">
-											</td>
-											<td class="align-middle">
+											<td class="text-center">
 												<button type="button" class="del btn btn-sm btn-danger"><i class="fas fa-minus"></i></button>
 											</td>
 										</tr>	
@@ -98,7 +89,7 @@
 							</tbody>
 							<tfoot>
 								<tr>
-									<td colspan="4" >
+									<td colspan="2" >
 										<button type="button" class="btn btn-block btn-sm btn-success add"><i class="fas fa-plus"></i></button>
 									</td>
 								</tr>
@@ -120,38 +111,11 @@
 @section('js') 
 
 <script type="text/javascript">
-		var file_count = 0;
 	$(".add").on("click", function () {
-		file_count++;
 	    var newRow = $('<tr>'+
-	    '<td class="align-middle" width="50%">{!! Form::text('sub_new[]', null , ['id' => 'sub_new[]','class' => 'form-control', 'placeholder' => 'Subservicio', 'required' => 'required']) !!}</td>'+
-	    '<td class="align-middle"><input id="new_file'+file_count+'" class="archivo " required name="file_subnew[]" type="file"><strong id="error-new_file'+file_count+'" class="text-danger"></strong></td>'+
-	    '<td><img src="{{asset('images/thumbnails/1128x898.png')}}" class="control new_file'+file_count+'"></td>'+
-	    '<td class="align-middle"><button type="button" class="del btn btn-sm btn-danger"><i class="fas fa-minus"></i></button></td></tr>');
+	    '<td class="text-center" >{!! Form::text('sub_new[]', null , ['id' => 'sub_new[]','class' => 'form-control', 'placeholder' => 'Subservicio', 'required' => 'required']) !!}</td>'+
+	    '<td class="text-center"><button type="button" class="del btn btn-sm btn-danger"><i class="fas fa-minus"></i></button></td></tr>');
 	    $("#subservicios").append(newRow);
-	    	function readURL(input) {
-			  if (input.files && input.files[0]) {
-			    var reader = new FileReader();
-			    reader.onload = function(e) {
-			      $('.'+input.id).attr('src', e.target.result);
-			    }
-			    reader.readAsDataURL(input.files[0]);
-			  }
-			}
-			$(".archivo").change(function() {
-				var imgPath = this.value;
-				var id = this.id;
-				var ext = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-				if (ext == "png" || ext == "jpg" || ext == "jpeg"){
-					document.getElementById('error-'+id).innerHTML = ''
-					readURL(this);
-					$('.flotante').attr('disabled', false);
-				}
-				else{
-					$('.flotante').attr('disabled', 'disabled');
-					document.getElementById('error-'+id).innerHTML = 'Por favor seleccione una imagen (jpg, jpeg, png).'
-				}
-			});
 	});
 
 	$("#subservicios").on("click", ".del", function (event) {
@@ -175,31 +139,6 @@
 		if (ext == "png" || ext == "jpg" || ext == "jpeg"){
 			document.getElementById('error-'+id).innerHTML = ''
 			readURL(this);
-			$('.flotante').attr('disabled', false);
-		}
-		else{
-			$('.flotante').attr('disabled', 'disabled');
-			document.getElementById('error-'+id).innerHTML = 'Por favor seleccione una imagen (jpg, jpeg, png).'
-		}
-	});
-
-	function leerURL(input) {
-	  if (input.files && input.files[0]) {
-	    var reader = new FileReader();
-	    reader.onload = function(e) {
-	      $('.'+input.id).attr('src', e.target.result);
-	    }
-	    reader.readAsDataURL(input.files[0]);
-	  }
-	}
-
-	$(".archivo-old").change(function() {
-		var imgPath = this.value;
-		var id = this.id;
-		var ext = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
-		if (ext == "png" || ext == "jpg" || ext == "jpeg"){
-			document.getElementById('error-'+id).innerHTML = ''
-			leerURL(this);
 			$('.flotante').attr('disabled', false);
 		}
 		else{

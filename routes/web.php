@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('publica.layouts.master');
 });
+
+
 
 Route::prefix('adm')->middleware('auth')->group(function () {
 	
@@ -31,7 +33,7 @@ Route::prefix('adm')->middleware('auth')->group(function () {
 		Route::get('{data}',	['uses' => 'InfoController@index',		'as' => 'info.empresa']);
 		Route::put('general',	['uses' => 'InfoController@general',	'as' => 'info.general']);
 		Route::put('emails',	['uses' => 'InfoController@emails',		'as' => 'info.emails']);
-		Route::put('imagenes',	['uses' => 'InfoController@imagenes',	'as' => 'info.imagenes']);
+		// Route::put('imagenes',	['uses' => 'InfoController@imagenes',	'as' => 'info.imagenes']);
 		Route::put('redes',	['uses' => 'InfoController@redes',		'as' => 'info.redes']);
 		Route::put('terminos',	['uses' => 'InfoController@terminos',	'as' => 'info.terminos']);
 		Route::get('metadatos/{id}',['uses' => 'InfoController@showmetadato',	'as' => 'info.showmetadatos']);
@@ -41,16 +43,12 @@ Route::prefix('adm')->middleware('auth')->group(function () {
 	Route::prefix('home')->group(function () {
 		Route::get('slider',['uses' => 'MultimediaController@SliderHome','as' => 'home.slider']);
 		Route::get('slider/form/{id?}',['uses' => 'MultimediaController@SliderHomeID','as' => 'home.slider.id']);
-		Route::get('banner',['uses' => 'MultimediaController@BannerHome','as' => 'home.banner']);
-		Route::get('banner/form/{id?}',['uses' => 'MultimediaController@BannerHomeID','as' => 'home.banner.id']);
 		Route::get('contenido',['uses' => 'ContenidoController@ContenidoHome','as' => 'home.contenido']);
 		Route::get('contenido/form/{id?}',['uses' => 'ContenidoController@ContenidoHomeID','as' => 'home.contenido.id']);
 	});
 
 
 	Route::prefix('empresa')->group(function () {
-		Route::get('slider',['uses' => 'MultimediaController@SliderEmpresa','as' => 'empresa.slider']);
-		Route::get('slider/form/{id?}',['uses' => 'MultimediaController@SliderEmpresaID','as' => 'empresa.slider.id']);
 		Route::get('banner',['uses' => 'MultimediaController@BannerEmpresa','as' => 'empresa.banner']);
 		Route::get('banner/form/{id?}',['uses' => 'MultimediaController@BannerEmpresaID','as' => 'empresa.banner.id']);
 		Route::get('contenido',['uses' => 'ContenidoController@ContenidoEmpresa','as' => 'empresa.contenido']);
@@ -60,9 +58,6 @@ Route::prefix('adm')->middleware('auth')->group(function () {
 	Route::prefix('servicios')->group(function () {
 		Route::get('slider',['uses' => 'MultimediaController@SliderServicios','as' => 'servicios.slider']);
 		Route::get('slider/form/{id?}',['uses' => 'MultimediaController@SliderServiciosID','as' => 'servicios.slider.id']);
-		Route::get('banner',['uses' => 'MultimediaController@BannerServicios','as' => 'servicios.banner']);
-		Route::get('banner/form/{id?}',['uses' => 'MultimediaController@BannerServiciosID','as' => 'servicios.banner.id']);
-
 		Route::get('',['uses' => 'ServiciosController@index','as' => 'servicios.index']);
 		Route::get('form/{id?}',['uses' => 'ServiciosController@FormServiciosID','as' => 'servicios.form.id']);
 		Route::post('',['uses' => 'ServiciosController@store','as' => 'servicios.store']);
@@ -72,8 +67,6 @@ Route::prefix('adm')->middleware('auth')->group(function () {
 	Route::get('contenido_extra',['uses' => 'ContenidoController@ContenidoExtra','as' => 'extra.contenido']);
 	Route::get('contenido_extra/form/{id?}',['uses' => 'ContenidoController@ContenidoExtraID','as' => 'extra.contenido.id']);
 
-	Route::get('galeria',['uses' => 'MultimediaController@SliderGaleria','as' => 'galeria.slider']);
-	Route::get('galeria/form/{id?}',['uses' => 'MultimediaController@SliderGaleriaID','as' => 'galeria.slider.id']);
 
 	Route::post('file',['uses' => 'MultimediaController@store','as' => 'file.store']);
 	Route::delete('file/{id}',['uses' => 'MultimediaController@destroy','as' => 'file.destroy']);

@@ -25,38 +25,6 @@ class MultimediaController extends Controller
         return view('adm.multimedia.form',compact('item','seccion','tipo'));
     }
 
-    public function BannerHome()
-    {   
-        $items = Multimedia::where([['seccion', 'home'],['tipo', 'banner']])->orderBy('orden')->get();
-        $seccion = 'home';
-        $tipo = 'banner';
-        return view('adm.multimedia.index',compact('items','seccion','tipo'));
-    }
-
-    public function BannerHomeID($id = null)
-    {   
-        $item = Multimedia::find($id);
-        $seccion = 'home';
-        $tipo = 'banner';
-        return view('adm.multimedia.form',compact('item','seccion','tipo'));
-    }
-
-    public function SliderEmpresa()
-    {   
-        $items = Multimedia::where([['seccion', 'empresa'],['tipo', 'slider']])->orderBy('orden')->get();
-        $seccion = 'empresa';
-        $tipo = 'slider';
-        return view('adm.multimedia.index',compact('items','seccion','tipo'));
-    }
-
-    public function SliderEmpresaID($id = null)
-    {   
-        $item = Multimedia::find($id);
-        $seccion = 'empresa';
-        $tipo = 'slider';
-        return view('adm.multimedia.form',compact('item','seccion','tipo'));
-    }
-
     public function BannerEmpresa()
     {   
         $items = Multimedia::where([['seccion', 'empresa'],['tipo', 'banner']])->orderBy('orden')->get();
@@ -85,38 +53,6 @@ class MultimediaController extends Controller
     {   
         $item = Multimedia::find($id);
         $seccion = 'servicios';
-        $tipo = 'slider';
-        return view('adm.multimedia.form',compact('item','seccion','tipo'));
-    }
-
-    public function BannerServicios()
-    {   
-        $items = Multimedia::where([['seccion', 'servicios'],['tipo', 'banner']])->orderBy('orden')->get();
-        $seccion = 'servicios';
-        $tipo = 'banner';
-        return view('adm.multimedia.index',compact('items','seccion','tipo'));
-    }
-
-    public function BannerServiciosID($id = null)
-    {   
-        $item = Multimedia::find($id);
-        $seccion = 'servicios';
-        $tipo = 'banner';
-        return view('adm.multimedia.form',compact('item','seccion','tipo'));
-    }
-
-    public function SliderGaleria()
-    {   
-        $items = Multimedia::where([['seccion', 'galeria'],['tipo', 'slider']])->orderBy('orden')->get();
-        $seccion = 'galeria';
-        $tipo = 'slider';
-        return view('adm.multimedia.index',compact('items','seccion','tipo'));
-    }
-
-    public function SliderGaleriaID($id = null)
-    {   
-        $item = Multimedia::find($id);
-        $seccion = 'galeria';
         $tipo = 'slider';
         return view('adm.multimedia.form',compact('item','seccion','tipo'));
     }

@@ -73,7 +73,7 @@
 					</a>
 						
 					@else
-						<img id="imagen" src="{{asset('images/thumbnails/1366x652.png')}}" class="control" alt="Responsive image">
+						<img id="imagen" src="{{asset('images/thumbnails/1365x518.png')}}" class="control" alt="Responsive image">
 					@endif
 	             		
 	    		</div>

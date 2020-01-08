@@ -42,7 +42,7 @@
                 </div>
             </div>  
             <small id="error-file_cliente" class="text-danger"></small></br>
-            <img id="img_cliente" src="{{asset('images/thumbnails/366x442.png')}}" class="control" alt="Responsive image">
+            <img id="img_cliente" src="{{asset('images/thumbnails/425x295.png')}}" class="control" alt="Responsive image">
           </div>
         </div>              
       {!! Form::close() !!}

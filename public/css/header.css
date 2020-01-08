@@ -1,0 +1,35 @@
+/* MENU DE NAVEGACION */
+
+#navbar .nav-link {
+  border: 2px solid white;
+  color: #0096D3;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 5px 20px 5px 20px;
+}
+
+#navbar .nav-link:hover{
+  border: 2px solid #0096D3;
+  border-radius: 20px;
+}
+
+#navbar .nav-link.active {
+  border: 2px solid #0096D3;
+  border-radius: 20px;
+}
+
+.bg-verde {
+    background-color: #05934A!important;
+    min-height: 20px;
+}
+
+.bg-azul {
+    background-color: #0096D3!important;
+    min-height: 20px;
+}
+
+#contact_navbar a {
+  color: #0096D3;
+  font-size: 15px;
+  font-weight: 400;
+}
