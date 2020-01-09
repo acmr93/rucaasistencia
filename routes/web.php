@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('publica.layouts.master');
-});
-
-
-
 Route::prefix('adm')->middleware('auth')->group(function () {
 	
 	Route::get('/', function () {
@@ -85,4 +79,4 @@ Auth::routes([
   'verify' => false, // Email Verification Routes...
 ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'PublicaController@home')->name('home');

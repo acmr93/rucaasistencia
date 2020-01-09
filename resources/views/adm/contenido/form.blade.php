@@ -81,7 +81,7 @@
 		    		</div>
 		    	</div>
 			</div>
-		    <!-- /.card-body -->>
+		    <!-- /.card-body -->
 		  </div>
 		  <!-- /.card -->			
 		</div>
@@ -113,6 +113,7 @@ $('.textarea').summernote({
 	    ['color', ['forecolor']],
 	    ['para', ['ul', 'ol', 'paragraph']],
 	    ['insert', ['link', 'table', 'hr']],
+		['view', [ 'codeview','undo', 'redo']],
 	  ]
 })
 
