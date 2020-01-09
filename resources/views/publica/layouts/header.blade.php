@@ -49,30 +49,30 @@
 
             <div class="collapse navbar-collapse w-100">
                 <ul class="nav navbar-nav w-100  justify-content-around">
-                    <li class="nav-item active">
-                        <a class="nav-link m-auto {{ request()->is('/home') ? 'active' : '' }}" href="#">Home</a>
+                    <li class="nav-item ">
+                        <a class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" href="{{route('home')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-auto {{ request()->is('/quienes-somos') ? 'active' : '' }}" href="#">Quienes Somos</a>
+                        <a class="nav-link {{ Route::currentRouteName() == 'empresa' ? 'active' : '' }}" href="{{route('empresa')}}">Quienes Somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-auto {{ request()->is('/servicios') ? 'active' : '' }}" href="#">Servicios</a>
+                        <a class="nav-link {{ Route::currentRouteName() == 'servicios' ? 'active' : '' }}" href="{{route('servicios')}}">Servicios</a>
                     </li>
                 </ul>
             </div>
-            <a class="navbar-brand order-first order-md-0 mx-4" href="#" >
+            <a class="navbar-brand order-first order-md-0 mx-4" href="{{route('home')}}" >
                 <img class="mx-auto d-block" src="{{asset('images/logos/header.png')}}" height="">
             </a>
             <div class="collapse navbar-collapse w-100 ">
                 <ul class="nav navbar-nav w-100  justify-content-around">
                     <li class="nav-item">
-                        <a class="nav-link m-auto {{ request()->is('/personal-especializado') ? 'active' : '' }}" href="#">Personal Especializado</a>
+                        <a class="nav-link {{ Route::currentRouteName() == 'personal-especializado' ? 'active' : '' }}" href="#">Personal Especializado</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-auto {{ request()->is('/clientes') ? 'active' : '' }}" href="#">Clientes</a>
+                        <a class="nav-link {{ Route::currentRouteName() == 'clientes' ? 'active' : '' }}" href="#">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link m-auto {{ request()->is('/contacto') ? 'active' : '' }}" href="#">Contacto</a>
+                        <a class="nav-link {{ Route::currentRouteName() == 'contacto' ? 'active' : '' }}" href="#">Contacto</a>
                     </li>
                 </ul>
             </div>

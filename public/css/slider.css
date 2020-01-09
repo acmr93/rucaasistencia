@@ -47,7 +47,7 @@ h1.hero-title {
 }
 
 .carousel-hero-container {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 div.jumbotron.carousel-hero {
@@ -74,4 +74,7 @@ div.jumbotron.carousel-hero {
   display: inline-block;
 }
 
+#carousel p{
+  margin-bottom: 0px;
+}
   

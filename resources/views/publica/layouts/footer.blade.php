@@ -9,9 +9,9 @@
                     <div class="col-12">
                         <h5 class="titulo-footer">SECCIONES</h5>
                         <ul class="pl-0 mt-3">
-                            <li><a href="" class="text-center" >{{ __('Start') }}</a></li>
-                            <li><a href="" class="text-center" >{{ __('Company') }}</a></li>
-                            <li><a href="" class="text-center" >{{ __('Products') }}</a></li>
+                            <li><a href="{{route('home')}}" class="text-center" >Home</a></li>
+                            <li><a href="{{route('empresa')}}" class="text-center" >Quienes Somos</a></li>
+                            <li><a href="{{route('servicios')}}" class="text-center" >Servicios</a></li>
                             <li><a href="" class="text-center" >{{ __('News') }}</a></li>
                             <li><a href="" class="text-center" >{{ __('My Quote') }}</a></li>
                             <li><a href="" class="text-center" >{{ __('Contact') }}</a></li>
@@ -35,8 +35,8 @@
                         @php $i = 0; @endphp
                         @if ($empresa->telefonos != null)
                         @foreach($empresa->telefonos as $telefono => $value)
-                            <a class="enlace-footer" href="tel:{{$value['numero']}}" target="_blank">
-                                {{($i>0?' / ':'')}}{{(isset($value['visible'])?$value['visible']:$value['numero'])}}
+                            {{($i>0?' / ':'')}}<a class="enlace-footer" href="tel:{{$value['numero']}}" target="_blank">
+                                {{(isset($value['visible'])?$value['visible']:$value['numero'])}}
                             </a>
                             @php $i++; @endphp
                         @endforeach

@@ -1,11 +1,11 @@
-<section id="carousel" class="d-none d-md-block">
+<section id="carousel" class="">
     <div class="carousel slide" data-ride="carousel" id="carousel-1">
         <div class="carousel-inner" role="listbox">
         	@php $conteo = 0; @endphp
         	@if ($slider->count() > 0)
         		@foreach ($slider as $img)
 	                <div class="carousel-item @if($conteo==0) active @endif">
-	                    <div class="jumbotron pulse animated carousel-hero d-flex align-items-end" style="height: 450px;background-image: url(&quot;{{asset('loaded/'.$seccion.'/'.$img->nombre)}}&quot;)">
+	                    <div class="jumbotron pulse animated carousel-hero d-flex align-items-end" style="min-height: 550px;background-image: url(&quot;{{asset('loaded/'.$seccion.'/'.$img->nombre)}}&quot;)">
 	                        <div class="container carousel-hero-container ">
                                 {!!$img->texto1!!}
 	                        </div>

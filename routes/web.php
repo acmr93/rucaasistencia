@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'PublicaController@home')->name('home');
+Route::get('/quienes-somos', 'PublicaController@empresa')->name('empresa');
+Route::get('/servicios', 'PublicaController@servicios')->name('servicios');
 
 Route::prefix('adm')->middleware('auth')->group(function () {
 	
@@ -79,4 +82,4 @@ Auth::routes([
   'verify' => false, // Email Verification Routes...
 ]);
 
-Route::get('/', 'PublicaController@home')->name('home');
+
