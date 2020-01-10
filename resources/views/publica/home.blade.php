@@ -84,7 +84,9 @@
         	@if ($clientes->count() > 0)
         		@foreach ($clientes as $cliente)
 	                <div class="col-12 col-md-3  pb-4 justify-content-center shadow p-5">
-                        <img class="img-fluid" src="{{asset('loaded/clientes/'.$cliente->img[0]['nombre'])}}">
+                        <a target="{{$cliente->url != null ?'_blank':''}}" href="{{$cliente->url != null ?$cliente->url:'#'}}">
+                            <img class="img-fluid" src="{{asset('loaded/clientes/'.$cliente->img[0]['nombre'])}}">
+                        </a>
 	                </div>
         		@endforeach   
         	@else

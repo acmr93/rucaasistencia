@@ -12,9 +12,9 @@
                             <li><a href="{{route('home')}}" class="text-center" >Home</a></li>
                             <li><a href="{{route('empresa')}}" class="text-center" >Quienes Somos</a></li>
                             <li><a href="{{route('servicios')}}" class="text-center" >Servicios</a></li>
-                            <li><a href="" class="text-center" >{{ __('News') }}</a></li>
-                            <li><a href="" class="text-center" >{{ __('My Quote') }}</a></li>
-                            <li><a href="" class="text-center" >{{ __('Contact') }}</a></li>
+                            <li><a href="{{route('personal')}}" class="text-center" >Personal Especializado</a></li>
+                            <li><a href="{{route('personal')}}" class="text-center" >Clientes</a></li>
+                            <li><a href="{{route('contacto')}}" class="text-center" >Contacto</a></li>
                         </ul>
                     </div>
                     <div class="col-12 mt-4"><span style="color: #AAAAAA;font-size: 8px;">BY OSOLE</span></div>

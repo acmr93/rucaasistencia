@@ -1,6 +1,6 @@
 @extends('adm.layouts.master')
 
-@section('title', $empresa->nombre.'| Empresa - Emails de la Empresa')
+@section('title', $empresa->nombre.' | Empresa - Emails de la Empresa')
 
 @section('css')
 
@@ -19,15 +19,9 @@
 		    	<H4 class="text-center mb-3 border-bottom border-top bg-gradient-primary ">Ingrese a qué mail desea redirigir los formularios que contiene el sitio.</H4>
 		    	<div class="form-group">
 		    	    {!! Form::label('email_contacto', 'Contacto - ') !!}
-		    	    <span class="text-muted"><a href="#">ir al Formulario</a></span>
-		    	    {!! Form::text('email_contacto', (isset($emails)?$emails->email_contacto:null), ['id'=> 'email_contacto', 'class' => $errors->has('email_contacto') ? 'form-control is-invalid' : 'form-control']) !!}
+		    	    <span class="text-muted"><a target="_blank" href="{{route('contacto')}}">ir al Formulario</a></span>
+		    	    {!! Form::email('email_contacto', (isset($emails)?$emails->email_contacto:null), ['id'=> 'email_contacto', 'class' => $errors->has('email_contacto') ? 'form-control is-invalid' : 'form-control']) !!}
 		    	    <small class="text-danger">{{ $errors->first('email_contacto') }}</small>
-		    	</div>
-		    	<div class="form-group d-none">
-		    	    {!! Form::label('email_presupuesto', 'Presupuesto - ') !!}
-		    	    <span class="text-muted"><a href="#">ir al Formulario</a></span>
-		    	    {!! Form::text('email_presupuesto', (isset($emails)?$emails->email_presupuesto:null), ['id'=> 'email_presupuesto', 'class' => $errors->has('email_presupuesto') ? 'form-control is-invalid' : 'form-control']) !!}
-		    	    <small class="text-danger">{{ $errors->first('email_presupuesto') }}</small>
 		    	</div>
 
 		    </div>

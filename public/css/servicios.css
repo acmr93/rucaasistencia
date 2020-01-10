@@ -36,11 +36,11 @@
   font-size:15px;
   padding-left: 0;
   padding-bottom: 0;
-  padding-top: 10px;
+  padding-top: 0;
+  margin-bottom: 0;
   letter-spacing: 1px;
   color: #0096D3;
 }
 
 .features-text ul li {
-  line-height: 100%;
 }

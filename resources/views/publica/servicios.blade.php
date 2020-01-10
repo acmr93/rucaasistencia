@@ -26,7 +26,7 @@
                                 @if ($feature->texto != null)
                                     <ul >
                                         @foreach ($feature->texto as $key => $value)
-                                        <li class="mb-3">
+                                        <li class="">
                                             <spam style="color: #333333">{{$value['subservicio']}}</spam>
                                         </li>
                                         @endforeach                                     

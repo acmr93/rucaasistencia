@@ -29,3 +29,7 @@ body {
     vertical-align: middle;
     padding-top: 10px;
 }
+
+.text-success{
+    color: #05934A!important;
+}

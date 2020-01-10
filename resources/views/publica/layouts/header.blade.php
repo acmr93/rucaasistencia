@@ -66,13 +66,13 @@
             <div class="collapse navbar-collapse w-100 ">
                 <ul class="nav navbar-nav w-100  justify-content-around">
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'personal-especializado' ? 'active' : '' }}" href="#">Personal Especializado</a>
+                        <a class="nav-link {{ Route::currentRouteName() == 'personal' ? 'active' : '' }}" href="{{route('personal')}}">Personal Especializado</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'clientes' ? 'active' : '' }}" href="#">Clientes</a>
+                        <a class="nav-link {{ Route::currentRouteName() == 'clientes' ? 'active' : '' }}" href="{{route('clientes')}}">Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() == 'contacto' ? 'active' : '' }}" href="#">Contacto</a>
+                        <a class="nav-link {{ Route::currentRouteName() == 'contacto' ? 'active' : '' }}" href="{{route('contacto')}}">Contacto</a>
                     </li>
                 </ul>
             </div>

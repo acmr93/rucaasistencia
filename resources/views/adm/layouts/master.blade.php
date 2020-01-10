@@ -94,11 +94,11 @@
                   <i class="fas fa-comments mr-2"></i> Redes Sociales
                 </a>
               </li> --}}
-              <li>
+{{--               <li>
                 <a href="{{route('info.empresa','terminos')}}" class="dropdown-item">
                   <i class="fas fa-check-square mr-2"></i> Términos y condiciones
                 </a>
-              </li>
+              </li> --}}
               <li>
                 <a href="{{route('info.empresa','metadatos')}}" class="dropdown-item">
                   <i class="fas fa-chart-line mr-2"></i> Metadatos

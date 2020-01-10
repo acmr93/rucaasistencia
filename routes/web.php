@@ -13,6 +13,10 @@
 Route::get('/', 'PublicaController@home')->name('home');
 Route::get('/quienes-somos', 'PublicaController@empresa')->name('empresa');
 Route::get('/servicios', 'PublicaController@servicios')->name('servicios');
+Route::get('/personal', 'PublicaController@personal')->name('personal');
+Route::get('/clientes', 'PublicaController@clientes')->name('clientes');
+Route::get('/contacto', 'PublicaController@contacto')->name('contacto');
+Route::post('/contacto', 'PublicaController@contact')->name('contact');
 
 Route::prefix('adm')->middleware('auth')->group(function () {
 	
@@ -32,7 +36,7 @@ Route::prefix('adm')->middleware('auth')->group(function () {
 		Route::put('emails',	['uses' => 'InfoController@emails',		'as' => 'info.emails']);
 		// Route::put('imagenes',	['uses' => 'InfoController@imagenes',	'as' => 'info.imagenes']);
 		Route::put('redes',	['uses' => 'InfoController@redes',		'as' => 'info.redes']);
-		Route::put('terminos',	['uses' => 'InfoController@terminos',	'as' => 'info.terminos']);
+		//Route::put('terminos',	['uses' => 'InfoController@terminos',	'as' => 'info.terminos']);
 		Route::get('metadatos/{id}',['uses' => 'InfoController@showmetadato',	'as' => 'info.showmetadatos']);
 		Route::put('metadatos/{id}',['uses' => 'InfoController@savemetadato',	'as' => 'info.savemetadatos']);
 	});
