@@ -16,18 +16,18 @@
         <div class="row">
         	@if ($features->count() > 0)
         		@foreach ($features as $feature)
-	                <div class="features-item col-12 col-md-6  ">
-                        <div class="row px-0">
-                            <div class="features-img col-12 ">
+	                <div class="features-item col-12 col-md-6 d-flex align-content-around">
+                        <div class="row">
+                            <div class="features-img col-12 col-md-8 ">
                                 <img class="img-fluid" src="{{asset('loaded/servicios/'.$feature->img[0]['nombre'])}}">
                                 <div class="pill-titulo">{{strtoupper($feature->titulo)}}</div>
                             </div>
-                            <div class="features-text col-12 " >
+                            <div class="features-text col-12 col-md-4 pr-0" >
                                 @if ($feature->texto != null)
                                     <ul >
                                         @foreach ($feature->texto as $key => $value)
-                                        <li >
-                                            {{$value['subservicio']}}
+                                        <li class="mb-3">
+                                            <spam style="color: #333333">{{$value['subservicio']}}</spam>
                                         </li>
                                         @endforeach                                     
                                     </ul>
