@@ -4,17 +4,57 @@
 
 @section('css')
     <link rel="stylesheet" href="{{asset('css/empresa.css')}}">
+    <style type="text/css">
+        .video {
+          position: relative;
+          background-color: black;
+          height: 75vh;
+          min-height: 550px;
+          width: 100%;
+          overflow: hidden;
+        }
+
+        .video video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          z-index: 0;
+          -ms-transform: translateX(-50%) translateY(-50%);
+          -moz-transform: translateX(-50%) translateY(-50%);
+          -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+        }
+
+        .video .container {
+          position: relative;
+          z-index: 2;
+        }
+
+        @media (pointer: coarse) and (hover: none) {
+          .video {
+            background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+          }
+          .video video {
+            display: none;
+          }
+        }
+    </style>
 @endsection
 
 @section('contenido')
 
-<div class="row align-items-end banner" style="background-image: url(&quot;{{asset('loaded/'.$seccion.'/'.$banner->nombre)}}&quot;); ">
-    <div class="container ">
-        <div class="text-center pb-5">
-            {!!$banner->texto1!!}
-        </div>
-    </div>
-</div>
+<section class="video">
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    @if ($banner->count() > 0)
+        <source src="{{asset('loaded/'.$seccion.'/'.$banner->nombre)}}" type="video/mp4">
+    @endif
+  </video>
+</section>
 
 <section class="box-contenido">
     <div class="container">

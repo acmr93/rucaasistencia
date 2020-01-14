@@ -63,6 +63,9 @@
 	                        <label class="custom-file-label" for="exampleInputFile">{{(isset($item)?$item->nombre:'Seleccione imagen')}}</label>
 	                      </div>
 	                    </div>
+	                    @if($tipo == 'banner')
+	                    	<small class="text-muted">Solamente los banner tipo video seran visializados en la seccion de home y en formato mp4.</small>
+						@endif
 	                    <small class="text-danger">{{ $errors->first('archivo') }}</small>
 
 	                </div>		               

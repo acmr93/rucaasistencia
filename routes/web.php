@@ -10,6 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/master', function () {
+    return view('publica.layouts.master');
+});
+
 Route::get('/', 'PublicaController@home')->name('home');
 Route::get('/quienes-somos', 'PublicaController@empresa')->name('empresa');
 Route::get('/servicios', 'PublicaController@servicios')->name('servicios');

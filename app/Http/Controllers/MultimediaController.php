@@ -62,7 +62,7 @@ class MultimediaController extends Controller
         if (isset($request->id)) {
             $this->validate($request, 
             [
-                "archivo"  => "nullable|mimes:jpeg,png",
+                "archivo"  => "nullable|mimes:jpeg,png,mp4",
             ]);
             $item = Multimedia::findOrFail($request->id);
             $item->fill($request->all());
@@ -101,7 +101,7 @@ class MultimediaController extends Controller
         else{
             $this->validate($request, 
             [
-                "archivo"  => "required|mimes:jpeg,png",
+                "archivo"  => "required|mimes:jpeg,png,mp4",
             ]);
             
             $item= new Multimedia($request->all());

@@ -26,7 +26,7 @@ class UserController extends Controller
     public function listar()
     {
         try {
-            $usuarios = User::get();
+            $usuarios = User::where('id','!=',auth()->user()->id)->get();
 
             $usuarios->each(function($usuarios){
                 if ($usuarios->rol == 'admin')
